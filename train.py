@@ -242,7 +242,7 @@ def recommend_for_user(user, top_k=5):
     return candidates.sort_values("final_score", ascending=False).head(top_k)
 
 
-# SAVE MODEL AND ARTIFACTS (ONLY NEW CODE ADDED)
+# SAVE MODEL AND ARTIFACTS 
 print("\nSaving model and artifacts...")
 model.save('models/sentiment_model.h5')
 with open('models/tokenizer.pkl', 'wb') as f:
@@ -254,4 +254,5 @@ final_recommendations.to_csv('models/recommendations.csv', index=False)
 brand_affinity.to_csv('models/brand_affinity.csv', index=False)
 category_affinity.to_csv('models/category_affinity.csv', index=False)
 product_metadata.to_csv('models/product_metadata.csv', index=False)
+
 print("Training complete! All artifacts saved.")
