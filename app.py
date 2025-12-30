@@ -54,7 +54,7 @@ def predict_sentiment(request: ReviewRequest):
 
 @app.post("/recommend")
 def recommend_products(request: RecommendationRequest):
-    # EXACT SAME LOGIC AS YOUR recommend_for_user FUNCTION
+    # EXACT SAME LOGIC AS recommend_for_user FUNCTION
     user = request.username
     top_k = request.top_k
     
@@ -95,4 +95,5 @@ def recommend_products(request: RecommendationRequest):
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
